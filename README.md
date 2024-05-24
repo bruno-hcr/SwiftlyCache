@@ -8,7 +8,6 @@ SwiftlyCache is a lightweight, generic wrapper for `NSCache` in Swift, designed 
 - Automatic memory management and eviction policies of `NSCache`.
 - Thread-safe operations.
 - Conversion to and from a Swift dictionary.
-- Persistence of cache state when the app transitions to background.
 
 ## Requirements
 
@@ -69,27 +68,6 @@ You can initialize the cache with an existing dictionary:
 ```swift
 let initialDictionary: [String: Int] = ["Answer": 42, "Score": 100]
 let cache = Cache(dictionary: initialDictionary)
-```
-
-### Persistence Across App States
-
-To save and restore the cache state when the app transitions to background and foreground:
-
-```swift
-import UIKit
-import SwiftlyCache
-
-let cache = Cache<String, Int>()
-
-// Save the cache state when the app goes to the background
-NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { _ in
-    cache.saveState()
-}
-
-// Restore the cache state when the app comes to the foreground
-NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: nil) { _ in
-    cache.restoreState()
-}
 ```
 
 ## License
