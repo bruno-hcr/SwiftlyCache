@@ -12,8 +12,8 @@ SwiftlyCache is a lightweight, generic wrapper for `NSCache` in Swift, designed 
 
 ## Requirements
 
-- iOS 10.0+ / macOS 10.12+ / tvOS 10.0+ / watchOS 3.0+
-- Xcode 11+
+- iOS 16.0+ / macOS 14+ / tvOS 17.0+ / watchOS 10.0+
+- Xcode 15+
 - Swift 5.0+
 
 ## Installation
